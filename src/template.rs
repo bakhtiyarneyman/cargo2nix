@@ -129,8 +129,6 @@ pub struct Dependency {
 fn to_registry_string(src_id: SourceId) -> String {
     if src_id.is_path() {
         "unknown".to_string()
-    } else if src_id.is_git() {
-        format!("git+{}", src_id.url())
     } else {
         src_id.as_url().to_string()
     }
